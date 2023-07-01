@@ -44,7 +44,7 @@ export default function Layout() {
 
   return (
     <div className="site-wrapper" key={key}>
-      <h1>Weather Wise</h1>
+      <h1>Weather Watch</h1>
       <Header />
       <div>
         <form onSubmit={handleSubmit}>
