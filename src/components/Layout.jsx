@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import Header from "./Header";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import Header from "./Header";
+import Day from "./Day";
 
 export default function Layout() {
   const [city, setCity] = useState("");
-  const [date, setDate] = useState(new Date());
   const [key, setKey] = useState(0); // Initialize a key state
 
   function handleChange(event) {
@@ -15,31 +15,7 @@ export default function Layout() {
   function handleSubmit(event) {
     event.preventDefault();
     // Update the key value to trigger a rerender
-    setKey((prevKey) => prevKey + 1); 
-  }
-
-  function formatdate(date) {
-    const days = [
-      "Sunday", "Monday",
-      "Tuesday", "Wednesday",
-      "Thursday", "Friday",
-      "Saturday"
-    ];
-    const months = [
-      "January", "February",
-      "March", "April",
-      "May", "June",
-      "July", "August",
-      "September", "October",
-      "November", "December"
-    ];
-
-    const dayOfWeek = days[date.getDay()];
-    const month = months[date.getMonth()];
-    const dayOfMonth = date.getDate();
-    const year = date.getFullYear();
-
-    return `${dayOfWeek}, ${month} ${dayOfMonth}, ${year}`;
+    setKey((prevKey) => prevKey + 1);
   }
 
   return (
@@ -58,9 +34,7 @@ export default function Layout() {
           <button>Get Weather</button>
         </form>
       </div>
-      <span className="header-date">
-        {formatdate(date)}
-      </span>
+      <Day />
       <main>
         <Outlet context={{ city }} />
       </main>

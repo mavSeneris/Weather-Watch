@@ -35,15 +35,17 @@ export default function Hourly() {
   const hourlyData = weatherData.list.map((data) => (
     <div
       style={{
-        width: "20vh",
+        width: "30vh",
         display: "flex",
         justifyContent: "space-between",
+        alignContent: "center",
         gap: "10px",
       }}
       key={data.dt}
     >
       <p>{data.dt_txt.slice(10, -3)}</p>
       <span>{Math.ceil(data.main.temp)}°C</span>
+      <span>{data.weather.map(item => item.description)}</span>
     </div>
   ));
 
