@@ -45,8 +45,8 @@ export default function Today() {
             {Math.ceil(weatherData.main.temp)}
             <span className="weather-data__temp-unit">°C</span>
           </h2>
-          <h3>{weatherData.weather[0].description}</h3>
         </div>
+        <h3>{weatherData.weather[0].description}</h3>
       </div>
     </section>
   );
