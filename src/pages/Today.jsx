@@ -34,19 +34,19 @@ export default function Today() {
   return (
     <section>
       <div className="weather-data">
-        <h1>
+        <h2 className="weather-data__city">
           {weatherData.name}, {weatherData.sys.country}
-        </h1>
-        <small>Min: {Math.ceil(weatherData.main.temp_min)}°C</small>
-        <small>Max: {Math.ceil(weatherData.main.temp_max)}°C</small>
-        <span>Feels like: {Math.ceil(weatherData.main.feels_like)}°C</span>
-        <div className="weather-data__main_info">
-          <h2 className="weather-data__celcius">
-            {Math.ceil(weatherData.main.temp)}
-            <span className="weather-data__temp-unit">°C</span>
-          </h2>
-        </div>
-        <h3>{weatherData.weather[0].description}</h3>
+        </h2>
+        <h3 className="weather-data__description">
+          {weatherData.weather[0].description}
+        </h3>
+        <h3 className="weather-data__celcius">
+          {Math.ceil(weatherData.main.temp)}°
+        </h3>
+        <span>Feels Like {Math.ceil(weatherData.main.feels_like)}°C</span>
+
+        {/* <small>Min: {Math.ceil(weatherData.main.temp_min)}°C</small>
+        <small>Max: {Math.ceil(weatherData.main.temp_max)}°C</small> */}
       </div>
     </section>
   );

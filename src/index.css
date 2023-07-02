@@ -34,6 +34,11 @@ p, h1, h2, h3, h4, h5, h6 {
   align-items: center;
   padding: 20px;
   gap: 20px;
+  min-height: 100vh;
+}
+
+.main {
+  flex-grow: 1;
 }
 
 a{
@@ -54,9 +59,31 @@ a:focus{
 }
 
 header{
-  width: 20vh;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.form-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form{
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.form-button{
+  font-size: 0.8rem;
+  margin-left: 10px;
 }
 
 .weather-data{
@@ -67,8 +94,20 @@ header{
   /* gap: 10px; */
 }
 
+.weather-data__city{
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.weather-data__description{
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
 .weather-data__celcius{
-  font-size: 10rem;
+  font-size: 3rem;
+  font-weight: 600;
+
   position: relative;
   /* align-self: flex-start; */
 }
@@ -83,3 +122,4 @@ header{
   display: flex;
   flex-direction: column;
 }
+

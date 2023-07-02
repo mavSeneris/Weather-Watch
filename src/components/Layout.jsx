@@ -21,22 +21,22 @@ export default function Layout() {
   return (
     <div className="site-wrapper" key={key}>
       <h1>Weather Watch</h1>
-      <Header />
-      <div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            onChange={handleChange}
-            placeholder="Enter a city..."
-            value={city}
-            name="city"
-          />
-          <button>Get Weather</button>
-        </form>
-      </div>
       <Day />
       <main>
         <Outlet context={{ city }} />
+        <div className="form-wrapper">
+          <Header />
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              onChange={handleChange}
+              placeholder="Enter a city..."
+              value={city}
+              name="city"
+            />
+            <button className="form-button">Get Weather</button>
+          </form>
+        </div>
       </main>
     </div>
   );
