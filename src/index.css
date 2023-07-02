@@ -75,7 +75,8 @@ header{
 
 .weather-data__temp-unit{
   position: absolute;
-  font-size: 3rem;
+  font-size: 6rem;
+  font-weight: 600;
   top: 15px;
 }
 
