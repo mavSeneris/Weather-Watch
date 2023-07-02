@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import titlizeString from "../utils/title";
 
 export default function Today() {
   const [weatherData, setWeatherData] = useState(null);
   const { city } = useOutletContext();
+  
 
   console.log(city);
 
@@ -26,10 +28,13 @@ export default function Today() {
       console.log("Error:", error);
     }
   };
-
+  
   if (!weatherData) {
     return <div className="site-wrapper">Loading...</div>;
   }
+  
+  const description = titlizeString(weatherData.weather[0].description)
+
 
   return (
     <section>
@@ -38,7 +43,7 @@ export default function Today() {
           {weatherData.name}, {weatherData.sys.country}
         </h2>
         <h3 className="weather-data__description">
-          {weatherData.weather[0].description}
+          {description}
         </h3>
         <h3 className="weather-data__celcius">
           {Math.ceil(weatherData.main.temp)}°

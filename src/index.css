@@ -95,9 +95,10 @@ form{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10%;
+  width: 30px;
+  min-width: 30px;
   font-size: 0.8rem;
-  margin-left: 10px;
+  margin-left: 2px;
   outline: none;
   cursor: pointer;
   background-color: #23a084;
@@ -110,6 +111,7 @@ form{
 input{
   border: 1px solid #aaa;
   border-radius: 10px;
+  outline: none;
 }
 
 .weather-data{
@@ -151,6 +153,8 @@ input{
 
 .weather-data__weather_icon{
   width: 90%;
+  min-width: 200px;
+  max-width: 400px;
   display: flex;
   padding: 20px;
 }
