@@ -38,7 +38,7 @@ export default function Today() {
           {weatherData.name}, {weatherData.sys.country}
         </h1>
         <small>Min: {Math.ceil(weatherData.main.temp_min)}°C</small>
-        <small>Min: {Math.ceil(weatherData.main.temp_max)}°C</small>
+        <small>Max: {Math.ceil(weatherData.main.temp_max)}°C</small>
         <span>Feels like: {Math.ceil(weatherData.main.feels_like)}°C</span>
         <div className="weather-data__main_info">
           <h2 className="weather-data__celcius">
