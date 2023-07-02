@@ -13,7 +13,7 @@ import Daily from "./pages/Daily";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route path="today" element={<Today />} />
+      <Route index element={<Today />} />
       <Route path="hourly" element={<Hourly />} />
       <Route path="daily" element={<Daily />} />
     </Route>
