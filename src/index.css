@@ -48,20 +48,30 @@ a{
 
 a:hover{
   /* text-decoration: underline; */
-  color: black;
+  color: #158ba6;
   font-weight: 700;
 }
 
 a:focus{
-  text-decoration: underline;
-  color: black;
+  /* text-decoration: underline; */
+  color: #1d71b8;
   font-weight: 700;
+  
 }
 
 header{
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px;
+}
+
+.header-date{
+  /* align-self: start; */
+  font-weight: 500;
+  font-size: 1.2rem;
+  /* letter-spacing: 1px; */
 }
 
 .form-wrapper {
@@ -75,15 +85,31 @@ header{
 }
 
 form{
-  height: 40px;
+  height: 30px;
   display: flex;
   justify-content: center;
   /* align-items: center; */
 }
 
 .form-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
   font-size: 0.8rem;
   margin-left: 10px;
+  outline: none;
+  cursor: pointer;
+  background-color: #23a084;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+input{
+  border: 1px solid #aaa;
+  border-radius: 10px;
 }
 
 .weather-data{
@@ -121,5 +147,11 @@ form{
 .weather-data__hourly{
   display: flex;
   flex-direction: column;
+}
+
+.weather-data__weather_icon{
+  width: 90%;
+  display: flex;
+  padding: 20px;
 }
 

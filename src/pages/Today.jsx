@@ -44,6 +44,9 @@ export default function Today() {
           {Math.ceil(weatherData.main.temp)}°
         </h3>
         <span>Feels Like {Math.ceil(weatherData.main.feels_like)}°C</span>
+        <div className="weather-data__weather_icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/2096/2096091.png" />
+        </div>
 
         {/* <small>Min: {Math.ceil(weatherData.main.temp_min)}°C</small>
         <small>Max: {Math.ceil(weatherData.main.temp_max)}°C</small> */}
