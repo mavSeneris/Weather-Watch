@@ -68,7 +68,7 @@ header{
 }
 
 .weather-data__celcius{
-  font-size: 5rem;
+  font-size: 10rem;
   position: relative;
   /* align-self: flex-start; */
 }
