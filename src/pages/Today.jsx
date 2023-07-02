@@ -31,8 +31,6 @@ export default function Today() {
     return <div className="site-wrapper">Loading...</div>;
   }
 
-  console.log(weatherData);
-
   return (
     <section>
       <div className="weather-data">

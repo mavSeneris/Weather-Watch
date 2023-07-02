@@ -6,24 +6,22 @@ export default function Daily() {
   const { city } = useOutletContext();
   const [weatherData, setWeatherData] = useState(DailyData);
 
-  console.log(weatherData);
-
   const dailyWeatherEls = weatherData.map((data) => (
     <div
       key={data.id}
-      style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+      style={{ display: "flex", flexDirection: "column" }}
     >
       <h3>{data.day}</h3>
+      <span>{data.description}</span>
       <p>max: {data.temp_max}C</p>
       <p>min: {data.temp_min}C</p>
-      <span>{data.description}</span>
-      <p>{data.rain}%</p>
+      <p>Chances of Rain:  {data.rain}%</p>
     </div>
   ));
 
   return (
     <div>
-      <h2>{city}</h2>
+      <h2>{city ? city.slice(0, 1).toUpperCase() + city.slice(1) : "Pook"}</h2>
       {dailyWeatherEls}
     </div>
   );
