@@ -47,22 +47,21 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 a{
+  font-weight: 700;
   text-decoration: none;
-  color: black;
+  color: rgb(91, 90, 90);
 }
 
 a:hover{
-  /* text-decoration: underline; */
   color: #158ba6;
   font-weight: 700;
 }
 
-a:focus{
-  /* text-decoration: underline; */
+/* a:focus{
   color: #1d71b8;
   font-weight: 700;
   
-}
+} */
 
 header{
   width: 100%;
@@ -87,7 +86,7 @@ main{
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #f1f1f1;
+  background-color: #f1f1f147;
   padding: 20px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
