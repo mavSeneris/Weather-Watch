@@ -5,9 +5,6 @@ import titlizeString from "../utils/title";
 export default function Today() {
   const [weatherData, setWeatherData] = useState(null);
   const { city } = useOutletContext();
-  
-
-  console.log(city);
 
   useEffect(() => {
     fetchWeatherData(city ? city : "pook");
@@ -28,13 +25,15 @@ export default function Today() {
       console.log("Error:", error);
     }
   };
-  
+
   if (!weatherData) {
     return <div className="site-wrapper">Loading...</div>;
   }
-  
-  const description = titlizeString(weatherData.weather[0].description)
 
+  const description = titlizeString(weatherData.weather[0].description);
+  const weatherIcon = weatherData.weather.map((data) => data.icon);
+
+  console.log(weatherData.weather);
 
   return (
     <section>
@@ -42,16 +41,18 @@ export default function Today() {
         <h2 className="weather-data__city">
           {weatherData.name}, {weatherData.sys.country}
         </h2>
-        <h3 className="weather-data__description">
-          {description}
-        </h3>
+        <h3 className="weather-data__description">{description}</h3>
         <h3 className="weather-data__celcius">
           {Math.ceil(weatherData.main.temp)}°
         </h3>
         <span>Feels Like {Math.ceil(weatherData.main.feels_like)}°C</span>
         <div className="weather-data__weather_icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/2096/2096091.png" />
+          {/* <img src="https://cdn-icons-png.flaticon.com/512/2096/2096091.png" /> */}
+          <img className="weather-icon"
+            src={`https://openweathermap.org/img/wn/${weatherIcon}@2x.png`}
+          />
         </div>
+        {/* <span>{weatherData.weather.map(data => data.icon)}</span> */}
 
         {/* <small>Min: {Math.ceil(weatherData.main.temp_min)}°C</small>
         <small>Max: {Math.ceil(weatherData.main.temp_max)}°C</small> */}

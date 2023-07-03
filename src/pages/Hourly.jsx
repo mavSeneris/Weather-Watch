@@ -6,8 +6,6 @@ export default function Hourly() {
   const [weatherData, setWeatherData] = useState(null);
   const { city } = useOutletContext();
 
-  console.log(city);
-
   useEffect(() => {
     fetchWeatherData(city ? city : "pook");
   }, []);

@@ -8,9 +8,14 @@ html, body {
   height: 100%;
 }
 body {
+  /* height: 100vh; */
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(#063ca0, #91bfe5);
+  color: white;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 img, picture, video, canvas, svg {
   display: block;
@@ -153,9 +158,16 @@ input{
 
 .weather-data__weather_icon{
   width: 90%;
+  height: 100%;
   min-width: 200px;
   max-width: 400px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
+}
+
+.weather-icon{
+  width: 100%;
 }
 
